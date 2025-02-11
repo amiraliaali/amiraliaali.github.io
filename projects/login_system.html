@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login System - Amir Ali Aali</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef1f7;
+        }
+        header {
+            background: url('../images/projects/login_system.png') no-repeat center/cover;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        header h1, header p {
+            position: relative;
+            z-index: 2;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #222;
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 0 10px;
+            border-radius: 25px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        nav a:hover {
+            background: #a7b1fc;
+            color: #3c3f64;
+            transform: translateY(-3px);
+        }
+        nav a.active {
+            background: #555;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .container h2 {
+            color: #333;
+        }
+        .container ul {
+            padding-left: 20px;
+        }
+        .video-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .video-container iframe {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .fallback-video {
+            display: none;
+        }
+        .github-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 18px;
+            background: #333;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .github-link:hover {
+            background: #555;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Space between images */
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 45%; /* Adjust width as needed */
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Login System</h1>
+        <p>C++ Project</p>
+    </header>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../education.html">Education</a>
+        <a href="../experience.html">Work Experience</a>
+        <a href="../projects.html" class="active">Projects</a>
+        <a href="../certificates.html">Certificates & Awards</a>
+        <a href="../recommendations.html">Recommendations</a>
+    </nav>
+    <div class="container">
+        <h2>Overview</h2>
+        <p>
+            This task highlights my proficiency in object-oriented programming with C++ and utilizing the Bazel build system. 
+            <br><br>
+            The program is designed to manage a dataset of cars, allowing operations such as renting or returning a car, as
+well as adding new cars to the dataset or removing existing ones.
+        </p>
+        
+        <h2>Skills Leveraged</h2>
+        <ul>
+            <li>C++</li>
+            <li>Object Oriented Programming</li>
+            <li>Bazel Build System</li>
+            <li>Git/GitHub</li>
+        </ul>
+        
+        <h2>Demonstration</h2>
+        <div class="video-container">
+            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/857s_qNNL9g" frameborder="0" allowfullscreen></iframe>
+            <p id="fallback-message" class="fallback-video">Video failed to load. <a href="https://youtu.be/857s_qNNL9g?si=3GmYW0I6OKcal0Y7" target="_blank">Watch on YouTube</a></p>
+        </div>
+        
+
+        <a class="github-link" href="https://youtu.be/857s_qNNL9g?si=3GmYW0I6OKcal0Y7" target="_blank">If the video does not load, click on this button</a>
+
+        <h2>Github Repository</h2>
+        <a class="github-link" href="https://github.com/amiraliaali/login_system" target="_blank">View on GitHub</a>
+    </div>
+    <script>
+        window.onload = function() {
+            let video = document.getElementById("video");
+            video.onerror = function() {
+                document.getElementById("fallback-message").style.display = "block";
+                video.style.display = "none";
+            };
+        };
+    </script>
+</body>
+</html>
