@@ -34,12 +34,15 @@
         nav {
             display: flex;
             justify-content: center;
+            align-items: center;
             background: #222;
             padding: 12px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 100;
         }
+
         nav a {
             color: white;
             font-size: 18px;
@@ -49,11 +52,14 @@
             border-radius: 25px;
             transition: background 0.3s ease, transform 0.2s ease;
         }
+
         nav a:hover {
             background: #a7b1fc;
             color: #3c3f64;
             transform: translateY(-3px);
         }
+
+        /* Active Page Indicator */
         nav a.active {
             background: #555;
             font-weight: bold;
