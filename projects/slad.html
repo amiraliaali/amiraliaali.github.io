@@ -9,12 +9,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #eef1f7;
         }
         header {
             background: url('../images/projects/slad_thumbnail.png') no-repeat center/cover;
             color: white;
-            padding: 50px 20px;
+            padding: 60px 20px;
             text-align: center;
             position: relative;
         }
@@ -27,28 +27,15 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
         }
-        header h1,
-        header p {
+        header h1, header p {
             position: relative;
             z-index: 2;
-            margin: 10px 0;
-        }
-        header h1 {
-            font-size: 40px;
-            font-weight: bold;
-        }
-        header p {
-            font-size: 18px;
-            font-style: italic;
-            opacity: 0.9;
         }
         nav {
             display: flex;
             justify-content: center;
-            align-items: center;
             background: #222;
             padding: 12px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -73,11 +60,16 @@
         }
         .container {
             max-width: 900px;
-            margin: auto;
+            margin: 30px auto;
             padding: 20px;
             background: white;
             border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .container h2 {
             color: #333;
@@ -85,21 +77,24 @@
         .container ul {
             padding-left: 20px;
         }
-        .container img {
-            width: 100%;
-            border-radius: 10px;
-            margin-top: 15px;
-        }
         .video-container {
             margin-top: 20px;
             text-align: center;
         }
+        .video-container iframe {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .fallback-video {
+            display: none;
+        }
         .github-link {
             display: inline-block;
             margin-top: 20px;
-            padding: 10px 15px;
+            padding: 12px 18px;
             background: #333;
             color: white;
+            font-weight: bold;
             text-decoration: none;
             border-radius: 5px;
             transition: background 0.3s ease;
@@ -125,25 +120,38 @@
     <div class="container">
         <h2>Overview</h2>
         <p>
-            As part of my Bachelor’s thesis, titled Street Lamp Area Detection through Classical Vision and Convolutional Neural Networks, which was in cooperation with Aptiv, I developed a component that processed pre-recorded footage to assess lighting conditions in real-time. 
+            As part of my Bachelor’s thesis, titled <strong>Street Lamp Area Detection</strong> through Classical Vision and Convolutional Neural Networks, I developed a system that processes video footage to assess real-time lighting conditions.
             <br><br>
-            For each moment of the footage, the system determined whether there was sufficient lighting. This functionality allows for the automatic activation of a car’s high beams in low-light conditions and deactivation when adequate surrounding light is detected.
+            The system determines whether there is sufficient lighting at any given moment, allowing for automatic activation of a car’s high beams in low-light conditions.
         </p>
         
         <h2>Skills Leveraged</h2>
         <ul>
             <li>Python</li>
             <li>Computer Vision (Classical & Deep Learning)</li>
-            <li>Pytorch for Convolutional Neural Networks (CNNs)</li>
+            <li>PyTorch for CNNs</li>
             <li>OpenCV for image processing</li>
+            <li>NumPy, Pandas, Matplotlib</li>
+            <li>Git/GitHub</li>
         </ul>
         
         <h2>Demonstration</h2>
         <div class="video-container">
-            <iframe width="560" height="315" src="https://www.youtube.com/watch?v=904GHoCMZxM&t=2s" frameborder="0" allowfullscreen></iframe>
+            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/904GHoCMZxM?rel=0" frameborder="0" allowfullscreen></iframe>
+            <p id="fallback-message" class="fallback-video">Video failed to load. <a href="https://www.youtube.com/watch?v=904GHoCMZxM" target="_blank">Watch on YouTube</a></p>
         </div>
         
         <a class="github-link" href="https://github.com/amiraliaali/streetlamp-detection" target="_blank">View on GitHub</a>
     </div>
+
+    <script>
+        window.onload = function() {
+            let video = document.getElementById("video");
+            video.onerror = function() {
+                document.getElementById("fallback-message").style.display = "block";
+                video.style.display = "none";
+            };
+        };
+    </script>
 </body>
 </html>
