@@ -211,6 +211,40 @@
         .timeline-item:hover .university-logo {
             transform: scale(1.05);
         }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #a7b1fc;
+            min-width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 101;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s ease;
+        }
+
+        /* Change background color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #a7b1fc;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
     </style>
 </head>
@@ -247,13 +281,19 @@
             <li class="skill-item">
                 <span>Python</span>
                 <div class="progress-bar-container">
-                    <div class="progress-bar" style="width: 90%;">5</div>
+                    <div class="progress-bar" style="width: 100%;">5</div>
                 </div>
             </li>
             <li class="skill-item">
-                <span>Machine Learning</span>
+                <span>C++</span>
                 <div class="progress-bar-container">
-                    <div class="progress-bar" style="width: 85%;">4.5</div>
+                    <div class="progress-bar" style="width: 100%;">5</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Computer Vision</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 80%;">4</div>
                 </div>
             </li>
             <li class="skill-item">
@@ -263,23 +303,102 @@
                 </div>
             </li>
             <li class="skill-item">
-                <span>Data Science</span>
+                <span>DL with Pytorch</span>
                 <div class="progress-bar-container">
-                    <div class="progress-bar" style="width: 75%;">4</div>
+                    <div class="progress-bar" style="width: 80%;">4</div>
                 </div>
             </li>
             <li class="skill-item">
-                <span>Computer Vision</span>
+                <span>ML with SKLearn</span>
                 <div class="progress-bar-container">
-                    <div class="progress-bar" style="width: 70%;">4</div>
+                    <div class="progress-bar" style="width: 80%;">4</div>
                 </div>
             </li>
             <li class="skill-item">
-                <span>Deep Learning</span>
+                <span>OpenCV</span>
                 <div class="progress-bar-container">
-                    <div class="progress-bar" style="width: 90%;">5</div>
+                    <div class="progress-bar" style="width: 80%;">4</div>
                 </div>
             </li>
+            <li class="skill-item">
+                <span>Numpy</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 80%;">4</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Pandas</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 60%;">3</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Matplotlib</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 60%;">3</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Git/GitHUB</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 100%;">5</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Pybinds</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 60%;">3</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Bazel</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 60%;">3</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Misra</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 60%;">3</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Agile</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 80%;">4</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Unit Testing</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 80%;">4</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>SQL</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 40%;">2</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Docker</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 40%;">2</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Matlab</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 40%;">2</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>HTML</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 40%;">2</div>
+                </div>
+            </li>
+            
         </ul>
     </div>
 
@@ -289,7 +408,7 @@
             <li class="language-item">
                 <span>English</span>
                 <div class="progress-bar-container">
-                    <div class="progress-bar" style="width: 95%;">5</div>
+                    <div class="progress-bar" style="width: 100%;">5</div>
                 </div>
             </li>
             <li class="language-item">
