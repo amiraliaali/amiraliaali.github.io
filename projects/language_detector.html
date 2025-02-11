@@ -114,6 +114,41 @@
             border-radius: 10px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
         }
+        /* Dropdown container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #a7b1fc;
+            min-width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 101;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s ease;
+        }
+
+        /* Change background color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #a7b1fc;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
     </style>
 </head>
@@ -123,12 +158,21 @@
         <p>Machine Learning Project</p>
     </header>
     <nav>
-        <a href="../index.html">Home</a>
-        <a href="../education.html">Education</a>
-        <a href="../experience.html">Work Experience</a>
-        <a href="../projects.html" class="active">Projects</a>
-        <a href="../certificates.html">Certificates & Awards</a>
-        <a href="../recommendations.html">Recommendations</a>
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html">Work Experience</a>
+        <div class="dropdown">
+            <a href="projects.html">Projects</a>
+            <div class="dropdown-content">
+                <a href="projects/slad.html">Street Lamp Area Detection</a>
+                <a href="projects/traffic_signal.html">Traffic Signal Control</a>
+                <a href="projects/mog.html">Image Segmentation (MoG)</a>
+                <a href="projects/login_system.html">Login System</a>
+                <a href="projects/language_detector.html">Language Detector</a>
+            </div>
+        </div>
+        <a href="certificates.html">Certificates & Awards</a>
+        <a href="recommendations.html">Recommendations</a>
     </nav>
     <div class="container">
         <h2>Overview</h2>
