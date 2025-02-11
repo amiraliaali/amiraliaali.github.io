@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Amir Ali Aali</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: url('images/rwth_pic_1.jpeg') no-repeat top/cover;
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+        }
+
+        header h1,
+        header p {
+            position: relative;
+            z-index: 2;
+            margin: 10px 0;
+        }
+
+        header h1 {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 18px;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        .photo-credit {
+            position: absolute;
+            bottom: 10px;
+            left: 10px; /* Change to right: 10px; if you want it on the right */
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            z-index: 3;
+        }
+
+        .photo-credit a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .photo-credit a:hover {
+            text-decoration: underline;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #222;
+            padding: 12px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 0 10px;
+            border-radius: 25px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        nav a:hover {
+            background: #a7b1fc;
+            color: #3c3f64;
+            transform: translateY(-3px);
+        }
+
+        /* Active Page Indicator */
+        nav a.active {
+            background: #555;
+            font-weight: bold;
+        }
+
+        .skills-section, .languages-section {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+
+        .skills-section h2, .languages-section h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .skills-list, .languages-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-item, .language-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .skill-item span, .language-item span {
+            font-size: 18px;
+        }
+
+        .progress-bar-container {
+            width: 60%;
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-left: 10px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #4caf50;
+            text-align: center;
+            color: white;
+            line-height: 20px;
+            border-radius: 10px;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: #333;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-left: 4px solid transparent;
+            margin-left: 40px;
+            margin-top: 10px;
+            position: relative;
+            transition: all 0.4s ease-in-out;
+        }
+        .timeline-item:hover {
+            background: #f9f9f9;
+            border-left: 4px solid #333;
+        }
+        .timeline-item div {
+            margin-left: 15px;
+        }
+        .timeline-item h3 {
+            margin: 0;
+            color: #333;
+        }
+        .timeline-item p {
+            margin: 5px 0 0;
+            color: #666;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 40px;
+            width: 12px;
+            height: 12px;
+            background: #333;
+            border-radius: 50%;
+        }
+        .university-logo {
+            width: 100px;
+            height: 50px;
+            border-radius: 0px;
+            margin-right: 30px;
+            object-fit: contain;
+            transition: transform 1s ease;
+        }
+        .timeline-item:hover .university-logo {
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Skills</h1>
+        <p>Amirali Aali</p>
+        <div class="photo-credit">
+            Photo by <a href="https://www.rwth-aachen.de/cms/root/studium/~eez/vor-dem-studium/?lidx=1" target="_blank">Alexander Müller</a>
+        </div>
+    </header> 
+
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../education.html">Education</a>
+        <a href="../experience.html">Work Experience</a>
+        <div class="dropdown">
+            <a href="../projects.html">Projects</a>
+            <div class="dropdown-content">
+                <a href="../projects/slad.html">Street Lamp Area Detection</a>
+                <a href="../projects/traffic_signal.html">Traffic Signal Control</a>
+                <a href="../projects/mog.html">Image Segmentation (MoG)</a>
+                <a href="../projects/login_system.html">Login System</a>
+                <a href="../projects/language_detector.html">Language Detector</a>
+            </div>
+        </div>
+        <a href="../certificates.html">Certificates & Awards</a>
+        <a href="../skills.html">skills</a>
+    </nav>
+
+    <div class="skills-section">
+        <h2>Technical Skills</h2>
+        <ul class="skills-list">
+            <li class="skill-item">
+                <span>Python</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 90%;">5</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Machine Learning</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 85%;">4.5</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Reinforcement Learning</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 80%;">4</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Data Science</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 75%;">4</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Computer Vision</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 70%;">4</div>
+                </div>
+            </li>
+            <li class="skill-item">
+                <span>Deep Learning</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 90%;">5</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="languages-section">
+        <h2>Languages</h2>
+        <ul class="languages-list">
+            <li class="language-item">
+                <span>English</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 95%;">5</div>
+                </div>
+            </li>
+            <li class="language-item">
+                <span>German</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 80%;">4</div>
+                </div>
+            </li>
+            <li class="language-item">
+                <span>Persian</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 100%;">5</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
