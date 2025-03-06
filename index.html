@@ -6,19 +6,19 @@
     <title>Amir Ali Aali - Portfolio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f8f9fa;
+            color: #333;
         }
         header {
-            background: url('images/rwth_pic_1.jpeg') no-repeat top /cover;
+            background: url('images/rwth_pic_1.jpeg') no-repeat center/cover;
             color: white;
-            padding: 50px 20px;
             text-align: center;
+            padding: 80px 20px;
             position: relative;
         }
-
         header::after {
             content: "";
             position: absolute;
@@ -26,187 +26,93 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+            background: rgba(0, 0, 0, 0.6);
         }
-
-        header h1,
-        header p {
+        header h1, header p {
             position: relative;
             z-index: 2;
             margin: 10px 0;
         }
-
         header h1 {
-            font-size: 40px;
+            font-size: 42px;
             font-weight: bold;
         }
-
         header p {
-            font-size: 18px;
+            font-size: 20px;
             font-style: italic;
-            opacity: 0.9;
-        }
-        .photo-credit {
-            position: absolute;
-            bottom: 10px;
-            left: 10px; /* Change to right: 10px; if you want it on the right */
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.7);
-            z-index: 3;
-        }
-
-        .photo-credit a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-        }
-
-        .photo-credit a:hover {
-            text-decoration: underline;
         }
         nav {
             display: flex;
             justify-content: center;
-            align-items: center;
             background: #222;
             padding: 12px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             position: sticky;
             top: 0;
             z-index: 100;
         }
-
         nav a {
             color: white;
             font-size: 18px;
             text-decoration: none;
             padding: 12px 20px;
             margin: 0 10px;
-            border-radius: 25px;
-            transition: background 0.3s ease, transform 0.5s ease;
+            transition: background 0.3s ease;
         }
-
         nav a:hover {
-            background: #a7b1fc;
-            color: #3c3f64;
-            transform: translateY(-3px);
-        }
-
-        /* Active Page Indicator */
-        nav a.active {
-            background: #555;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 20px;
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-            margin-top: 20px;
+            background: #0073b1;
+            border-radius: 5px;
         }
         .profile-container {
             display: flex;
             align-items: center;
-            margin-top: 20px;
-            gap: 20px;
-            transition: transform 0.3s ease;
-        }
-        .profile-container:hover {
-            transform: translateY(-5px);
+            justify-content: center;
+            margin-top: 40px;
+            gap: 30px;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
         }
         .profile-image {
             border-radius: 50%;
-            width: 250px;
-            height: 250px;
+            width: 200px;
+            height: 200px;
             object-fit: cover;
-            border: 5px solid #444;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .profile-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
-        }
-        .profile-details {
-            max-width: 500px;
-            margin-left: 30px;
-            color: #333;
+            border: 5px solid #0073b1;
         }
         .profile-details h3 {
-            margin-bottom: 15px;
-            color: #444;
             font-size: 24px;
+            margin-bottom: 10px;
         }
         .profile-details p {
-            margin: 10px 0;
             font-size: 16px;
-            color: #666;
+            margin: 5px 0;
         }
         .profile-details a {
             text-decoration: none;
-            color: #333;
             font-weight: bold;
-            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .profile-details a:hover {
-            color: #444;
+        .social-icons img {
+            width: 20px;
+            height: 20px;
         }
-        .profile-details strong {
-            color: #333;
-        }
-
         .about-me {
-            background-color: #ffffff;
-            padding: 20px;
-            margin-top: 40px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
         .about-me h2 {
             font-size: 28px;
-            color: #333;
             margin-bottom: 15px;
-        }
-        .about-me p {
-            font-size: 16px;
-            color: #666;
-            line-height: 1.6;
-            margin-top: 10px;
-        }
-        /* Dropdown container */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        /* Dropdown content (hidden by default) */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #a7b1fc;
-            min-width: 200px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            z-index: 101;
-        }
-
-        /* Links inside the dropdown */
-        .dropdown-content a {
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            display: block;
-            transition: background 0.3s ease;
-        }
-
-        /* Change background color of dropdown links on hover */
-        .dropdown-content a:hover {
-            background-color: #a7b1fc;
-        }
-
-        /* Show the dropdown menu on hover */
-        .dropdown:hover .dropdown-content {
-            display: block;
         }
     </style>
 </head>
@@ -214,11 +120,6 @@
     <header>
         <h1>Amir Ali Aali</h1>
         <p>M.Sc. Data Science Student at RWTH Aachen | Working Student at SAP</p>
-        
-        <!-- Photo Credit -->
-        <div class="photo-credit">
-            Photo by <a href="https://www.rwth-aachen.de/cms/root/studium/~eez/vor-dem-studium/?lidx=1" target="_blank">Alexander Müller</a>
-        </div>
     </header>    
     <nav>
         <a href="../index.html">Home</a>
@@ -229,24 +130,29 @@
         <a href="../skills.html">Skills & Languages</a>
     </nav>
     
-    <!-- Profile Section -->
     <section class="profile-container">
-        <!-- Profile Image -->
         <img src="images/my_image.jpg" alt="Amir Ali Aali" class="profile-image">
-        
-        <!-- Profile Details -->
         <div class="profile-details">
             <h3>Personal Information</h3>
             <p><strong>Email:</strong> amiraliaali@gmail.com</p>
             <p><strong>Phone:</strong> +4915730272150</p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/amirali-aali-09240312b " target="_blank">Amirali Aali</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/amiraliaali?tab=repositories" target="_blank">amiraliaali</a></p>
+            <p class="social-icons">
+                <strong>LinkedIn:</strong> 
+                <a href="https://www.linkedin.com/in/amirali-aali-09240312b" target="_blank">
+                    <img src="images/linkedin_logo.png" alt="LinkedIn"> Amirali Aali
+                </a>
+            </p>
+            <p class="social-icons">
+                <strong>GitHub:</strong> 
+                <a href="https://github.com/amiraliaali?tab=repositories" target="_blank">
+                    <img src="images/github_logo.png" alt="GitHub"> amiraliaali
+                </a>
+            </p>
             <p><strong>Location:</strong> Aachen, Germany</p>
             <p><strong>Birth Year:</strong> 2001</p>
         </div>
     </section>
 
-    <!-- About Me Paragraph Section -->
     <section class="about-me">
         <h2>About Me</h2>
         <p>
