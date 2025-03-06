@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Signal Control - Amir Ali Aali</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eef1f7;
+        }
+        header {
+            background: url('../images/projects/traffic_signal_control.PNG') no-repeat center/cover;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        header h1, header p {
+            position: relative;
+            z-index: 2;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #222;
+            padding: 12px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 12px 20px;
+            margin: 0 10px;
+            border-radius: 25px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        nav a:hover {
+            background: #a7b1fc;
+            color: #3c3f64;
+            transform: translateY(-3px);
+        }
+
+        /* Active Page Indicator */
+        nav a.active {
+            background: #555;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .container h2 {
+            color: #333;
+        }
+        .container ul {
+            padding-left: 20px;
+        }
+        .video-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .video-container iframe {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .fallback-video {
+            display: none;
+        }
+        .github-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 18px;
+            background: #333;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .github-link:hover {
+            background: #555;
+        }
+        /* Dropdown container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #a7b1fc;
+            min-width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 101;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s ease;
+        }
+
+        /* Change background color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #a7b1fc;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Autonomous Car Navigation using Proximal Policy Optimization (PPO)</h1>
+        <p>Reinforcement Learning Project</p>
+    </header>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../education.html">Education</a>
+        <a href="../experience.html">Work Experience</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../certificates.html">Certificates & Awards</a>
+        <a href="../skills.html">Skills & Languages</a>
+    </nav>
+    <div class="container">
+        <h2>Overview</h2>
+        <p>
+            This project implements a reinforcement learning approach using Proximal Policy Optimization (PPO) to train an autonomous agent (a free-moving car) to navigate a space with obstacles and reach a predefined goal spot without collisions. 
+            <br><br>
+            The agent learns through trial and error, improving its navigation strategy over time.
+        </p>
+        
+        <h2>Skills Leveraged</h2>
+        <ul>
+            <li>Python</li>
+            <li>Reinforcement Learning</li>
+            <li>PyTorch for Deep Learning</li>
+            <li>Git/GitHub</li>
+        </ul>
+        
+        <h2>Demonstration</h2>
+        <div class="video-container">
+            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/gWPBULtI-MI" frameborder="0" allowfullscreen></iframe>
+            <p id="fallback-message" class="fallback-video">Video failed to load. <a href="https://www.youtube.com/watch?v=gWPBULtI-MI&feature=youtu.be" target="_blank">Watch on YouTube</a></p>
+        </div>
+
+        <h2>Github Repository</h2>
+        <a class="github-link" href="https://github.com/amiraliaali/self_car_park/tree/main" target="_blank">View on GitHub</a>
+    </div>
+
+    <script>
+        window.onload = function() {
+            let video = document.getElementById("video");
+            video.onerror = function() {
+                document.getElementById("fallback-message").style.display = "block";
+                video.style.display = "none";
+            };
+        };
+    </script>
+</body>
+</html>
