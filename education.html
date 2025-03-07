@@ -101,7 +101,18 @@
             margin-top: 10px;
             position: relative;
             transition: all 0.4s ease-in-out;
+            border-bottom: 1px solid #ccc;
+            border-top: 1px solid #ccc;
         }
+
+        .timeline-item:first-child {
+            border-top: none;
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
         .timeline-item:hover {
             background: #f9f9f9;
             border-left: 4px solid #333;
