@@ -26,7 +26,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+            background: rgba(0, 0, 0, 0.5);
         }
 
         header h1,
@@ -46,23 +46,7 @@
             font-style: italic;
             opacity: 0.9;
         }
-        .photo-credit {
-            position: absolute;
-            bottom: 10px;
-            left: 10px; /* Change to right: 10px; if you want it on the right */
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.7);
-            z-index: 3;
-        }
-
-        .photo-credit a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-        }
-
-        .photo-credit a:hover {
-            text-decoration: underline;
-        }
+        
         nav {
             display: flex;
             justify-content: center;
@@ -84,12 +68,11 @@
             background: #0073b1;
             border-radius: 5px;
         }
-
-        /* Active Page Indicator */
         nav a.active {
             background: #555;
             font-weight: bold;
         }
+        
         .timeline {
             max-width: 1000px;
             margin: auto;
@@ -146,59 +129,32 @@
         .university-logo {
             width: 100px;
             height: 50px;
-            border-radius: 0px;
             margin-right: 30px;
             object-fit: contain;
             transition: transform 1s ease;
-            /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); */
         }
         .timeline-item:hover .university-logo {
             transform: scale(1.05);
-            /* box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); */
         }
-        /* Dropdown container */
-        .dropdown {
-            position: relative;
-            display: inline-block;
+        .courses {
+            margin-top: 10px;
+            padding: 10px;
+            background: #eef;
+            border-radius: 5px;
         }
-
-        /* Dropdown content (hidden by default) */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #a7b1fc;
-            min-width: 200px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            z-index: 101;
+        .courses h4 {
+            margin: 0;
+            color: #222;
         }
-
-        /* Links inside the dropdown */
-        .dropdown-content a {
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            display: block;
-            transition: background 0.3s ease;
+        .courses ul {
+            padding-left: 20px;
         }
-
-        /* Change background color of dropdown links on hover */
-        .dropdown-content a:hover {
-            background-color: #a7b1fc;
-        }
-
-        /* Show the dropdown menu on hover */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
     </style>
 </head>
 <body>
     <header>
         <h1>Education</h1>
         <p>Amirali Aali</p>
-        <!-- Photo Credit -->
     </header> 
     <nav>
         <a href="../index.html">Home</a>
@@ -216,6 +172,17 @@
                 <p>RWTH Aachen University</p>
                 <span>Apr 2024 - Present</span>
                 <p>Duration: -</p>
+                <div class="courses">
+                    <h4>Courses Taken:</h4>
+                    <ul>
+                        <li>Computer Vision</li>
+                        <li>Reinforcement Learning</li>
+                        <li>Machine Learning</li>
+                        <li>Introduction into Data Science</li>
+                        <li>Mathematics of Data Science</li>
+                        <li>Data Analysis and Visualization</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="timeline-item">
@@ -225,15 +192,38 @@
                 <p>University of Duisburg-Essen</p>
                 <span>Oct 2020 - Mar 2024</span>
                 <p>Duration: 3 years 6 months</p>
+                <div class="courses">
+                    <h4>Courses Taken:</h4>
+                    <ul>
+                        <li>Data Structures and Algorithms</li>
+                        <li>Computer Network</li>
+                        <li>Network Security</li>
+                        <li>Probability and Statics</li>
+                        <li>Discrete Mathematics</li>
+                        <li>Digital Image Processing</li>
+                        <li>Object-Oriented-Programming with C++</li>
+                        <li>Mathamtics 1 and 2</li>
+                        <li>Network Security</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="timeline-item">
-            <img src="images/fh_aachen_logo.png" alt="University of Duisburg-Essen Logo" class="university-logo">
+            <img src="images/fh_aachen_logo.png" alt="FH Aachen Logo" class="university-logo">
             <div>
-                <h3>Preparatory College</h3>
-                <p>Freshman Institute (FH-Aachen)</p>
+                <h3>Preparatory College </h3>
+                <p>Freshman Intitute (FH-Aachen)</p>
                 <span>Oct 2019 - Sep 2020</span>
                 <p>Duration: 1 year</p>
+                <div class="courses">
+                    <h4>Courses Taken:</h4>
+                    <ul>
+                        <li>Mathematics</li>
+                        <li>Physics</li>
+                        <li>German</li>
+                        <li>English</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
