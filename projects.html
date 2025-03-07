@@ -18,14 +18,50 @@
             text-align: center;
             position: relative;
         }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+        }
+
+        header h1,
+        header p {
+            position: relative;
+            z-index: 2;
+            margin: 10px 0;
+        }
+
         header h1 {
             font-size: 40px;
             font-weight: bold;
         }
+
         header p {
             font-size: 18px;
             font-style: italic;
             opacity: 0.9;
+        }
+        .photo-credit {
+            position: absolute;
+            bottom: 10px;
+            left: 10px; /* Change to right: 10px; if you want it on the right */
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            z-index: 3;
+        }
+
+        .photo-credit a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+        }
+
+        .photo-credit a:hover {
+            text-decoration: underline;
         }
         nav {
             display: flex;
@@ -48,10 +84,13 @@
             background: #0073b1;
             border-radius: 5px;
         }
+
+        /* Active Page Indicator */
         nav a.active {
             background: #555;
             font-weight: bold;
         }
+
         .projects-container {
             max-width: 1000px;
             margin: auto;
@@ -59,55 +98,33 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
             gap: 20px;
+            margin-top: 20px;
         }
         .project-card {
-            perspective: 1000px;
-        }
-        .card-inner {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.6s;
-        }
-        .project-card:hover .card-inner {
-            transform: rotateY(180deg);
-        }
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            backface-visibility: hidden;
+            background: white;
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
         }
-        .card-front {
-            background: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
         }
-        .card-front img {
+        .project-card img {
             width: 100%;
             border-radius: 10px;
+            object-fit: cover;
         }
-        .card-front h3 {
+        .project-card h3 {
             margin-top: 15px;
             color: #333;
         }
-        .card-back {
-            background: white;
-            transform: rotateY(180deg);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-        .card-back p {
+        .project-card p {
             color: #666;
-            text-align: center;
         }
-        .card-back a {
+        .project-card a {
             display: inline-block;
             margin-top: 10px;
             padding: 8px 15px;
@@ -117,8 +134,43 @@
             border-radius: 5px;
             transition: background 0.3s ease;
         }
-        .card-back a:hover {
+        .project-card a:hover {
             background: #555;
+        }
+        /* Dropdown container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown content (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #a7b1fc;
+            min-width: 200px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            z-index: 101;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s ease;
+        }
+
+        /* Change background color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #a7b1fc;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
     </style>
 </head>
@@ -126,39 +178,58 @@
     <header>
         <h1>Projects</h1>
         <p>Amirali Aali</p>
+        <!-- Photo Credit -->
     </header> 
     <nav>
         <a href="../index.html">Home</a>
         <a href="../education.html">Education</a>
         <a href="../experience.html">Work Experience</a>
-        <a href="../projects.html" class="active">Projects</a>
+        <a href="../projects.html">Projects</a>
         <a href="../certificates.html">Certificates & Awards</a>
         <a href="../skills.html">Skills & Languages</a>
     </nav>
     <div class="projects-container">
         <div class="project-card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <img src="images/projects/slad_thumbnail.png" alt="Street Lamp Area Detection">
-                    <h3>Street Lamp Area Detection</h3>
-                </div>
-                <div class="card-back">
-                    <p>Developed a system for real-time street lamp area detection using classical vision and CNNs.</p>
-                    <a href="projects/slad.html">More Details</a>
-                </div>
-            </div>
+            <img src="images/projects/slad_thumbnail.png" alt="Street Lamp Area Detection">
+            <h3>Street Lamp Area Detection</h3>
+            <h4>Python</h4>
+            <p>Developed a system for real-time street lamp area detection using classical vision and CNNs, enabling automatic high beam control based on lighting conditions.</p>
+            <a href="projects/slad.html">More Details</a>
         </div>
         <div class="project-card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <img src="images/projects/autonomous_navigation_1.jpg" alt="Autonomous Car Navigation">
-                    <h3>Autonomous Car Navigation</h3>
-                </div>
-                <div class="card-back">
-                    <p>Developed a Reinforcement Learning project using PPO to train an agent navigating to a goal.</p>
-                    <a href="projects/car_navigation.html">More Details</a>
-                </div>
-            </div>
+            <img src="images/projects/autonomous_navigation_1.jpg" alt="Autonomous Car Navigation using Proximal Policy Optimization (PPO)">
+            <h3>Autonomous Car Navigation using Proximal Policy Optimization (PPO)</h3>
+            <h4>Python</h4>
+            <p>Developed a Reinforcement Learning project using PPO to train an agent navigating to a goal in a free environment.</p>
+            <a href="projects/car_navigation.html">More Details</a>
+        </div>
+        <div class="project-card">
+            <img src="images/projects/traffic_signal_control.PNG" alt="Traffic Signal Control using Deep SARSA">
+            <h3>Traffic Signal Control using Deep SARSA</h3>
+            <h4>Python</h4>
+            <p>Developed a Reinforcement Learning project using Deep SARSA to optimize traffic signal control at a junction, learning through rewards instead of predefined rules.</p>
+            <a href="projects/traffic_signal.html">More Details</a>
+        </div>
+        <div class="project-card">
+            <img src="images/projects/mog.PNG" alt="Image Segmentation using Mixture of Gaussians (MoG)">
+            <h3>Image Segmentation using Mixture of Gaussians (MoG)</h3>
+            <h4>Python</h4>
+            <p>Implemented a foreground/background segmentation method using the Mixture of Gaussians (MoG) algorithm to deepen my understanding from a lecture.</p>
+            <a href="projects/mog.html">More Details</a>
+        </div>
+        <div class="project-card">
+            <img src="images/projects/login_system.png" alt="Login System">
+            <h3>Login System</h3>
+            <h4>C++</h4>
+            <p>Demonstrated proficiency in object-oriented programming with C++ and the Bazel build system by developing a program to manage a car dataset, supporting operations like renting, returning, adding, and removing cars.</p>
+            <a href="projects/login_system.html">More Details</a>
+        </div>
+        <div class="project-card">
+            <img src="images/projects/language_detector.png" alt="Language Detector">
+            <h3>Language Detector</h3>
+            <h4>Python</h4>
+            <p>Trained a Multinomial Naive Bayes model on a multilingual dataset to enable automatic language detection, accurately identifying the language of any given sentence after preprocessing.</p>
+            <a href="projects/language_detector.html">More Details</a>
         </div>
     </div>
 </body>
