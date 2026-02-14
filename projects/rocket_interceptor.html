@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocket Interceptor - Amir Ali Aali</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('../images/projects/rocket_interceptor.PNG') no-repeat center/cover;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #1c1c1c;
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            padding: 12px 18px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+        nav a:hover, nav a.active {
+            background: #0073b1;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 {
+            color: #222;
+            border-bottom: 2px solid #0073b1;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        .container ul {
+            padding-left: 25px;
+        }
+        .video-container {
+            margin-top: 25px;
+            text-align: center;
+        }
+        .video-container iframe {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .github-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: #0073b1;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+        .github-link:hover {
+            background: #005582;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rocket Interceptor using Deep Q-Network (DQN)</h1>
+        <p>Reinforcement Learning Project</p>
+    </header>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../education.html">Education</a>
+        <a href="../experience.html">Work Experience</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../certificates.html">Certificates & Awards</a>
+        <a href="../skills.html">Skills & Languages</a>
+    </nav>
+    <div class="container">
+        <h2>Overview</h2>
+        <p>
+            This project implements a reinforcement learning-based interception system in a custom 2D simulation.
+            An attacking rocket attempts to reach a protected area while a defensive rocket, controlled by a Deep Q-Network (DQN) agent, learns to intercept it.
+            <br><br>
+            The environment, reward structure, and action space were implemented from scratch, and each episode randomizes the attacker's position, orientation, and speed to ensure robust learning.
+        </p>
+
+        <h2>Skills Leveraged</h2>
+        <ul>
+            <li>Python</li>
+            <li>Reinforcement Learning</li>
+            <li>Deep Learning with PyTorch</li>
+            <li>Custom Environment Design</li>
+            <li>PyGame</li>
+            <li>NumPy, Matplotlib</li>
+            <li>Git/GitHub</li>
+        </ul>
+
+        <h2>Demonstration</h2>
+        <div class="video-container">
+            <iframe id="video" width="500" height="500" src="https://youtu.be/1s6ej1XbSiY?si=hrKAXfBjiMYRTvuz" frameborder="0" allowfullscreen></iframe>
+            <p id="fallback-message" class="fallback-video">If video failed to load: <a href="https://youtu.be/1s6ej1XbSiY?si=hrKAXfBjiMYRTvuz" target="_blank">Watch on YouTube</a></p>
+        </div>
+
+        <h2>Github Repository</h2> <br>
+        <a class="github-link" href="https://github.com/amiraliaali/defence" target="_blank">View repository on GitHub</a>
+    </div>
+
+    <script>
+        window.onload = function() {
+            let video = document.getElementById("video");
+            video.onerror = function() {
+                document.getElementById("fallback-message").style.display = "block";
+                video.style.display = "none";
+            };
+        };
+    </script>
+</body>
+</html>
