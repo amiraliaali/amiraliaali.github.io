@@ -172,6 +172,41 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
+        .project-tags {
+            margin-top: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            margin: 2px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Different colors for different languages */
+        .tag.python {
+            background-color: #3572A5; /* Python blue */
+        }
+
+        .tag.rust {
+            background-color: #DEA584; /* Rust orange */
+        }
+
+        .tag.cpp {
+            background-color: #00599C; /* C++ blue */
+        }
+
+        /* Hover effect */
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
     </style>
 </head>
 <body>
@@ -192,7 +227,9 @@
         <div class="project-card">
             <img src="images/projects/slad_thumbnail.png" alt="Street Lamp Area Detection">
             <h3>Street Lamp Area Detection</h3>
-            <h4>Python</h4>
+            <div class="project-tags">
+                <span class="tag python">Python</span>
+            </div>
             <p>Developed a system for real-time street lamp area detection using classical vision and CNNs, enabling automatic high beam control based on lighting conditions.</p>
             <a href="projects/slad.html">More Details</a>
         </div>
