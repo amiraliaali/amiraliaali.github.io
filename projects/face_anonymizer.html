@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Anonymizer in Rust - Amir Ali Aali</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                        url('../images/projects/face_anonymizer_thumbnail.png') no-repeat center/cover;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #1c1c1c;
+            padding: 14px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            padding: 12px 18px;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+        nav a:hover, nav a.active {
+            background: #0073b1;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 {
+            color: #222;
+            border-bottom: 2px solid #0073b1;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        .container ul {
+            padding-left: 25px;
+        }
+        .video-container {
+            margin-top: 25px;
+            text-align: center;
+        }
+        .video-container iframe {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .github-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 20px;
+            background: #0073b1;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+        .github-link:hover {
+            background: #005582;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Face Anonymizer with Rust</h1>
+        <p>Computer Vision Project</p>
+    </header>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../education.html">Education</a>
+        <a href="../experience.html">Work Experience</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../certificates.html">Certificates & Awards</a>
+        <a href="../skills.html">Skills & Languages</a>
+    </nav>
+    <div class="container">
+        <h2>Overview</h2>
+        <p>
+            This project implements a real-time face anonymization pipeline using Rust. The workflow consists of:
+            <br><br>
+            <strong>1. Model Export: </strong>
+            We start with a YOLOv8 face detector implemented in Python and export it to the ONNX format. This allows the model to be used outside Python in a Rust environment with ONNX Runtime.
+            <br><br>
+            <strong>2. Rust Pipeline:</strong>
+            Using the ONNX model, the Rust pipeline:
+            <br>
+            - Reads a video frame by frame using OpenCV.
+            <br>
+            - Detects faces using the YOLOv8 ONNX model.
+            <br>
+            - Applies Non-Maximum Suppression (NMS) to remove overlapping detections.
+            <br>
+            - Anonymizes detected faces by drawing filled black rectangles over them.
+            <br>
+            - Writes the processed frames back into a new video.
+            <br><br>
+            The entire pipeline is optimized for speed and efficiency, using multithreading and ONNX runtime graph optimizations.
+        </p>
+
+        <h2>Skills Leveraged</h2>
+        <ul>
+            <li>Python</li>
+            <li>Rust</li>
+            <li>Computer Vision</li>
+            <li>Git/GitHub</li>
+        </ul>
+
+        <h2>Demonstration</h2>
+        <div class="video-container">
+            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/wPZM7ki_50k" frameborder="0" allowfullscreen></iframe>
+            <p id="fallback-message" class="fallback-video">If video failed to load: <a href="https://youtu.be/wPZM7ki_50k?si=Yb6XAla0eVE-TZkb" target="_blank">Watch on YouTube</a></p>
+        </div>
+
+        <h2>Github Repository</h2> <br>
+        <a class="github-link" href="https://github.com/amiraliaali/face_bluring_with_rust" target="_blank">View repository on GitHub</a>
+    </div>
+
+    <script>
+        window.onload = function() {
+            let video = document.getElementById("video");
+            video.onerror = function() {
+                document.getElementById("fallback-message").style.display = "block";
+                video.style.display = "none";
+            };
+        };
+    </script>
+</body>
+</html>
