@@ -102,25 +102,36 @@
     <div class="container">
         <h2>Overview</h2>
         <p>
-            This project implements a real-time face anonymization pipeline using Rust. The workflow consists of:
+            This project implements a real-time face anonymization pipeline using Rust with GPU acceleration.
+            The workflow consists of:
             <br><br>
-            <strong>1. Model Export: </strong>
-            We start with a YOLOv8 face detector implemented in Python and export it to the ONNX format. This allows the model to be used outside Python in a Rust environment with ONNX Runtime.
+
+            <strong>1. Model Export:</strong>
+            A YOLOv8 face detection model is trained and exported from Python to the ONNX format.
+            This enables deployment outside the Python ecosystem and allows efficient inference
+            using ONNX Runtime in Rust.
             <br><br>
-            <strong>2. Rust Pipeline:</strong>
-            Using the ONNX model, the Rust pipeline:
-            <br>
-            - Reads a video frame by frame using OpenCV.
-            <br>
-            - Detects faces using the YOLOv8 ONNX model.
-            <br>
-            - Applies Non-Maximum Suppression (NMS) to remove overlapping detections.
-            <br>
-            - Anonymizes detected faces by drawing filled black rectangles over them.
-            <br>
-            - Writes the processed frames back into a new video.
+
+            <strong>2. High-Performance Rust Pipeline:</strong>
+            The Rust-based inference engine leverages <strong>ONNX Runtime with CUDA Execution Provider</strong>
+            to run face detection directly on the <strong>GPU</strong>, significantly accelerating inference.
             <br><br>
-            The entire pipeline is optimized for speed and efficiency, using multithreading and ONNX runtime graph optimizations.
+
+            The pipeline:
+            <br>
+            - Reads video frames using OpenCV.
+            <br>
+            - Preprocesses frames and performs GPU-accelerated inference via ONNX Runtime + CUDA.
+            <br>
+            - Applies Non-Maximum Suppression (NMS) for post-processing.
+            <br>
+            - Anonymizes detected faces by drawing filled black rectangles.
+            <br>
+            - Writes processed frames into a new output video.
+            <br><br>
+
+            The system is optimized for performance using CUDA acceleration, efficient memory handling,
+            and ONNX Runtime graph optimizations, enabling real-time processing.
         </p>
 
         <h2>Skills Leveraged</h2>
