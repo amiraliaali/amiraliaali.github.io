@@ -3,161 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Face Anonymizer in Rust - Amir Ali Aali</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7fc;
-            color: #333;
-        }
-        header {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-                        url('../images/projects/face_anonymizer_thumbnail.png') no-repeat center/cover;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #1c1c1c;
-            padding: 14px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav a {
-            color: white;
-            font-size: 16px;
-            text-decoration: none;
-            padding: 12px 18px;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-        }
-        nav a:hover, nav a.active {
-            background: #0073b1;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 25px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 0.6s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        h2 {
-            color: #222;
-            border-bottom: 2px solid #0073b1;
-            padding-bottom: 5px;
-            display: inline-block;
-        }
-        .container ul {
-            padding-left: 25px;
-        }
-        .video-container {
-            margin-top: 25px;
-            text-align: center;
-        }
-        .video-container iframe {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-        .github-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 20px;
-            background: #0073b1;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background 0.3s ease;
-        }
-        .github-link:hover {
-            background: #005582;
-        }
-    </style>
+    <title>Face Anonymizer in Rust — Amir Ali Aali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Face Anonymizer with Rust</h1>
-        <p>Computer Vision Project</p>
+    <header style="background: linear-gradient(rgba(15,23,42,0.72), rgba(15,23,42,0.72)), url('../images/projects/face_anonymizer_thumbnail.png') no-repeat center/cover;">
+        <h1>Face Anonymizer in Rust</h1>
+        <p class="subtitle">Computer Vision &middot; GPU-Accelerated Pipeline</p>
     </header>
+
     <nav>
         <a href="../index.html">Home</a>
         <a href="../education.html">Education</a>
         <a href="../experience.html">Work Experience</a>
-        <a href="../projects.html">Projects</a>
-        <a href="../certificates.html">Certificates & Awards</a>
-        <a href="../skills.html">Skills & Languages</a>
+        <a href="../projects.html" class="active">Projects</a>
+        <a href="../certificates.html">Certificates &amp; Awards</a>
+        <a href="../skills.html">Skills &amp; Languages</a>
     </nav>
-    <div class="container">
-        <h2>Overview</h2>
-        <p>
-            This project implements a real-time face anonymization pipeline using Rust with GPU acceleration.
-            The workflow consists of:
-            <br><br>
 
-            <strong>1. Model Export:</strong>
-            A YOLOv8 face detection model is trained and exported from Python to the ONNX format.
-            This enables deployment outside the Python ecosystem and allows efficient inference
-            using ONNX Runtime in Rust.
-            <br><br>
+    <div class="detail-container">
+        <div class="detail-card">
+            <h2>Overview</h2>
+            <p>This project implements a real-time face anonymization pipeline using Rust with GPU acceleration. The workflow consists of:</p>
+            <p><strong>1. Model Export:</strong> A YOLOv8 face detection model is trained and exported from Python to ONNX format, enabling deployment outside the Python ecosystem with efficient inference via ONNX Runtime in Rust.</p>
+            <p><strong>2. High-Performance Rust Pipeline:</strong> The Rust-based inference engine leverages <strong>ONNX Runtime with CUDA Execution Provider</strong> to run face detection directly on the GPU, significantly accelerating inference.</p>
+            <p>The pipeline reads video frames via OpenCV, preprocesses them, runs GPU-accelerated inference, applies Non-Maximum Suppression (NMS), anonymizes detected faces with filled black rectangles, and writes processed frames to a new output video.</p>
 
-            <strong>2. High-Performance Rust Pipeline:</strong>
-            The Rust-based inference engine leverages <strong>ONNX Runtime with CUDA Execution Provider</strong>
-            to run face detection directly on the <strong>GPU</strong>, significantly accelerating inference.
-            <br><br>
+            <h2>Skills Leveraged</h2>
+            <ul>
+                <li>Python</li>
+                <li>Rust</li>
+                <li>YOLOv8 / ONNX Runtime</li>
+                <li>CUDA GPU Acceleration</li>
+                <li>Computer Vision</li>
+                <li>Git/GitHub</li>
+            </ul>
 
-            The pipeline:
-            <br>
-            - Reads video frames using OpenCV.
-            <br>
-            - Preprocesses frames and performs GPU-accelerated inference via ONNX Runtime + CUDA.
-            <br>
-            - Applies Non-Maximum Suppression (NMS) for post-processing.
-            <br>
-            - Anonymizes detected faces by drawing filled black rectangles.
-            <br>
-            - Writes processed frames into a new output video.
-            <br><br>
+            <h2>Demonstration</h2>
+            <div class="video-wrap">
+                <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/wPZM7ki_50k" frameborder="0" allowfullscreen></iframe>
+                <p id="fallback-message" style="display:none;">If video failed to load: <a href="https://youtu.be/wPZM7ki_50k" target="_blank">Watch on YouTube</a></p>
+            </div>
 
-            The system is optimized for performance using CUDA acceleration, efficient memory handling,
-            and ONNX Runtime graph optimizations, enabling real-time processing.
-        </p>
-
-        <h2>Skills Leveraged</h2>
-        <ul>
-            <li>Python</li>
-            <li>Rust</li>
-            <li>Computer Vision</li>
-            <li>Git/GitHub</li>
-        </ul>
-
-        <h2>Demonstration</h2>
-        <div class="video-container">
-            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/wPZM7ki_50k" frameborder="0" allowfullscreen></iframe>
-            <p id="fallback-message" class="fallback-video">If video failed to load: <a href="https://youtu.be/wPZM7ki_50k?si=Yb6XAla0eVE-TZkb" target="_blank">Watch on YouTube</a></p>
+            <h2>GitHub Repository</h2>
+            <a class="btn" href="https://github.com/amiraliaali/face_bluring_with_rust" target="_blank">View on GitHub</a>
         </div>
-
-        <h2>Github Repository</h2> <br>
-        <a class="github-link" href="https://github.com/amiraliaali/face_bluring_with_rust" target="_blank">View repository on GitHub</a>
     </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/amirali-aali-09240312b" target="_blank">LinkedIn</a>
+            <a href="https://github.com/amiraliaali" target="_blank">GitHub</a>
+            <a href="mailto:amiraliaali@gmail.com">Email</a>
+        </div>
+        <span>Amir Ali Aali &middot; Aachen, Germany</span>
+    </footer>
 
     <script>
         window.onload = function() {
-            let video = document.getElementById("video");
-            video.onerror = function() {
+            let v = document.getElementById("video");
+            v.onerror = function() {
                 document.getElementById("fallback-message").style.display = "block";
-                video.style.display = "none";
+                v.style.display = "none";
             };
         };
     </script>

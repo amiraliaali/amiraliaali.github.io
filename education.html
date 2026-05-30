@@ -3,189 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education - Amir Ali Aali</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: linear-gradient(to right, #003366, #51c5ff);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        header::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        header h1,
-        header p {
-            position: relative;
-            z-index: 2;
-            margin: 10px 0;
-        }
-
-        header h1 {
-            font-size: 40px;
-            font-weight: bold;
-        }
-
-        header p {
-            font-size: 18px;
-            font-style: italic;
-            opacity: 0.9;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #222;
-            padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav a {
-            color: white;
-            font-size: 18px;
-            text-decoration: none;
-            padding: 12px 20px;
-            margin: 0 10px;
-            transition: background 0.3s ease;
-        }
-        nav a:hover {
-            background: #0073b1;
-            border-radius: 5px;
-        }
-        nav a.active {
-            background: #555;
-            font-weight: bold;
-        }
-
-        .timeline {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-            margin-top: 40px;
-            position: relative;
-            border-radius: 10px;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 0;
-            width: 4px;
-            height: 100%;
-            background: #333;
-        }
-        .timeline-item {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            border-left: 4px solid transparent;
-            margin-left: 40px;
-            margin-top: 10px;
-            position: relative;
-            transition: all 0.4s ease-in-out;
-            border-bottom: 1px solid #ccc;
-            border-top: 1px solid #ccc;
-        }
-
-        .timeline-item:first-child {
-            border-top: none;
-        }
-
-        .timeline-item:last-child {
-            border-bottom: none;
-        }
-
-        .timeline-item:hover {
-            background: #f9f9f9;
-            border-left: 4px solid #333;
-        }
-        .timeline-item h3 {
-            margin: 0;
-            color: #333;
-        }
-        .timeline-item p {
-            margin: 5px 0 0;
-            color: #666;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -24px;
-            width: 12px;
-            height: 12px;
-            background: #333;
-            border-radius: 50%;
-        }
-        .university-logo {
-            width: 100px;
-            height: 50px;
-            margin-right: 30px;
-            object-fit: contain;
-            transition: transform 1s ease;
-        }
-        .timeline-item:hover .university-logo {
-            transform: scale(1.05);
-        }
-        .courses {
-            margin-top: 10px;
-            padding: 10px;
-            background: #f9f9f9;
-            border-radius: 5px;
-            color: #333;
-        }
-        .courses h4 {
-            margin: 0;
-            color: #333;
-        }
-        .courses ul {
-            padding-left: 20px;
-        }
-    </style>
+    <title>Education — Amir Ali Aali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <h1>Education</h1>
-        <p>Amirali Aali</p>
+        <p class="subtitle">Academic background in Software Engineering &amp; Data Science</p>
     </header>
+
     <nav>
-        <a href="../index.html">Home</a>
-        <a href="../education.html">Education</a>
-        <a href="../experience.html">Work Experience</a>
-        <a href="../projects.html">Projects</a>
-        <a href="../certificates.html">Certificates & Awards</a>
-        <a href="../skills.html">Skills & Languages</a>
+        <a href="index.html">Home</a>
+        <a href="education.html" class="active">Education</a>
+        <a href="experience.html">Work Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="certificates.html">Certificates &amp; Awards</a>
+        <a href="skills.html">Skills &amp; Languages</a>
     </nav>
-    <div class="timeline">
-        <div class="timeline-item">
-            <img src="images/rwth_logo.png" alt="RWTH Aachen Logo" class="university-logo">
-            <div>
+
+    <div class="timeline-wrap">
+        <div class="timeline-item fade-in">
+            <img src="images/rwth_logo.png" alt="RWTH Aachen" class="timeline-logo">
+            <div class="tl-content">
                 <h3>Master of Science in Data Science</h3>
-                <p>RWTH Aachen University</p>
-                <span>Apr 2024 - Expected 2027</span>
-                <p>Duration: -</p>
-                <div class="courses">
-                    <h4>Courses Taken:</h4>
+                <p class="tl-org">RWTH Aachen University</p>
+                <p class="tl-date">Apr 2024 – Expected 2027</p>
+                <div class="detail-box">
+                    <h4>Courses Taken</h4>
                     <ul>
                         <li>Computer Vision</li>
-                        <li>Reinforcement Learning and Learning-Based Control</li>
+                        <li>Reinforcement Learning &amp; Learning-Based Control</li>
                         <li>Machine Learning</li>
                         <li>Action and Planning in AI</li>
                         <li>Virtual Reality I</li>
@@ -196,43 +45,42 @@
                         <li>Mathematics of Data Science</li>
                         <li>Mathematics of Signal and Image Processing</li>
                         <li>Data Analysis and Visualization</li>
-                        <li>Ethics, technology and Data</li>
+                        <li>Ethics, Technology and Data</li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="timeline-item">
-            <img src="images/uni_duisburg_essen_logo.jpg" alt="University of Duisburg-Essen Logo" class="university-logo">
-            <div>
+
+        <div class="timeline-item fade-in">
+            <img src="images/uni_duisburg_essen_logo.jpg" alt="University of Duisburg-Essen" class="timeline-logo">
+            <div class="tl-content">
                 <h3>Bachelor of Science in Software Engineering</h3>
-                <p>University of Duisburg-Essen</p>
-                <span>Oct 2020 - Mar 2024</span>
-                <p>Duration: 3 years 6 months</p>
-                <div class="courses">
-                    <h4>Courses Taken:</h4>
+                <p class="tl-org">University of Duisburg-Essen</p>
+                <p class="tl-date">Oct 2020 – Mar 2024 &middot; 3.5 years &middot; Final Grade: 1.7</p>
+                <div class="detail-box">
+                    <h4>Courses Taken</h4>
                     <ul>
                         <li>Data Structures and Algorithms</li>
                         <li>Computer Network</li>
                         <li>Network Security</li>
-                        <li>Probability and Statics</li>
+                        <li>Probability and Statistics</li>
                         <li>Discrete Mathematics</li>
                         <li>Digital Image Processing</li>
-                        <li>Object-Oriented-Programming with C++</li>
-                        <li>Mathematics 1 and 2</li>
-                        <li>Network Security</li>
+                        <li>OOP with C++</li>
+                        <li>Mathematics 1 &amp; 2</li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="timeline-item">
-            <img src="images/fh_aachen_logo.png" alt="FH Aachen Logo" class="university-logo">
-            <div>
-                <h3>Preparatory College </h3>
-                <p>Freshman Intitute (FH-Aachen)</p>
-                <span>Oct 2019 - Sep 2020</span>
-                <p>Duration: 1 year</p>
-                <div class="courses">
-                    <h4>Courses Taken:</h4>
+
+        <div class="timeline-item fade-in">
+            <img src="images/fh_aachen_logo.png" alt="FH Aachen" class="timeline-logo">
+            <div class="tl-content">
+                <h3>Preparatory College (Studienkolleg)</h3>
+                <p class="tl-org">FH Aachen — Freshman Institute</p>
+                <p class="tl-date">Oct 2019 – Sep 2020 &middot; 1 year</p>
+                <div class="detail-box">
+                    <h4>Courses Taken</h4>
                     <ul>
                         <li>Mathematics</li>
                         <li>Physics</li>
@@ -243,5 +91,22 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/amirali-aali-09240312b" target="_blank">LinkedIn</a>
+            <a href="https://github.com/amiraliaali" target="_blank">GitHub</a>
+            <a href="mailto:amiraliaali@gmail.com">Email</a>
+        </div>
+        <span>Amir Ali Aali &middot; Aachen, Germany</span>
+    </footer>
+
+    <script>
+        const io = new IntersectionObserver(
+            es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+            { threshold: 0.08 }
+        );
+        document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+    </script>
 </body>
 </html>

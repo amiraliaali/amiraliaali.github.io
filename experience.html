@@ -3,241 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Experience - Amir Ali Aali</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background: linear-gradient(to right, #003366, #51c5ff);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        header::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
-        }
-
-        header h1,
-        header p {
-            position: relative;
-            z-index: 2;
-            margin: 10px 0;
-        }
-
-        header h1 {
-            font-size: 40px;
-            font-weight: bold;
-        }
-
-        header p {
-            font-size: 18px;
-            font-style: italic;
-            opacity: 0.9;
-        }
-        .photo-credit {
-            position: absolute;
-            bottom: 10px;
-            left: 10px; /* Change to right: 10px; if you want it on the right */
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.7);
-            z-index: 3;
-        }
-
-        .photo-credit a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-        }
-
-        .photo-credit a:hover {
-            text-decoration: underline;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #222;
-            padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav a {
-            color: white;
-            font-size: 18px;
-            text-decoration: none;
-            padding: 12px 20px;
-            margin: 0 10px;
-            transition: background 0.3s ease;
-        }
-        nav a:hover {
-            background: #0073b1;
-            border-radius: 5px;
-        }
-
-        /* Active Page Indicator */
-        nav a.active {
-            background: #555;
-            font-weight: bold;
-        }
-
-        .timeline {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-            margin-top: 40px;
-            position: relative;
-            border-radius: 10px;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 20px;
-            top: 0;
-            width: 4px;
-            height: 100%;
-            background: #333;
-        }
-        .timeline-item {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            border-left: 4px solid transparent;
-            margin-left: 40px;
-            margin-top: 10px;
-            position: relative;
-            transition: all 0.4s ease-in-out;
-            border-bottom: 1px solid #ccc;
-            border-top: 1px solid #ccc;
-        }
-
-        .timeline-item:first-child {
-            border-top: none;
-        }
-
-        .timeline-item:last-child {
-            border-bottom: none;
-        }
-        .timeline-item:hover {
-            background: #f9f9f9;
-            border-left: 4px solid #333;
-        }
-        .timeline-item h3 {
-            margin: 0;
-            color: #333;
-        }
-        .timeline-item p {
-            margin: 5px 0 0;
-            color: #666;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -24px;
-            height: 100%;
-            width: 12px;
-            height: 12px;
-            background: #333;
-            border-radius: 50%;
-        }
-        .company-logo {
-            width: 100px;
-            height: 50px;
-            margin-right: 30px;
-            border-radius: 00%;
-            object-fit: contain;
-            transition: transform 1s ease;
-        }
-        .timeline-item:hover .company-logo {
-            transform: scale(1.05);
-        }
-        /* Dropdown container */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        /* Dropdown content (hidden by default) */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #a7b1fc;
-            min-width: 200px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            border-radius: 8px;
-            z-index: 101;
-        }
-
-        /* Links inside the dropdown */
-        .dropdown-content a {
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            display: block;
-            transition: background 0.3s ease;
-        }
-
-        /* Change background color of dropdown links on hover */
-        .dropdown-content a:hover {
-            background-color: #a7b1fc;
-        }
-
-        /* Show the dropdown menu on hover */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .skills {
-            margin-top: 10px;
-            padding: 10px;
-            background: #f9f9f9;
-            /* background: #eef;  */
-            border-radius: 5px;
-        }
-        .skills h4 {
-            margin: 0;
-            color: #222;
-        }
-        .skills ul {
-            padding-left: 20px;
-        }
-    </style>
+    <title>Work Experience — Amir Ali Aali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <h1>Work Experience</h1>
-        <p>Amirali Aali</p>
-        <!-- Photo Credit -->
+        <p class="subtitle">Industry roles in automotive technology, enterprise software, and academia</p>
     </header>
+
     <nav>
-        <a href="../index.html">Home</a>
-        <a href="../education.html">Education</a>
-        <a href="../experience.html">Work Experience</a>
-        <a href="../projects.html">Projects</a>
-        <a href="../certificates.html">Certificates & Awards</a>
-        <a href="../skills.html">Skills & Languages</a>
+        <a href="index.html">Home</a>
+        <a href="education.html">Education</a>
+        <a href="experience.html" class="active">Work Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="certificates.html">Certificates &amp; Awards</a>
+        <a href="skills.html">Skills &amp; Languages</a>
     </nav>
-    <div class="timeline">
-        <div class="timeline-item">
-            <img src="images/porsche_logo.png" alt="Porsche Logo" class="company-logo">
-            <div>
+
+    <div class="timeline-wrap">
+        <div class="timeline-item fade-in">
+            <img src="images/porsche_logo.png" alt="Porsche" class="timeline-logo">
+            <div class="tl-content">
                 <h3>Intern — Vision-Based Driving Assistance Systems</h3>
-                <p>Porsche</p>
-                <span>Apr 2026 - Aug 2026</span>
-                <p>Duration: 4 months | 40h/week | Weissach, Stuttgart</p>
-                <div class="skills">
-                    <h4>Skills Leveraged:</h4>
+                <p class="tl-org">Porsche AG</p>
+                <p class="tl-date">Apr 2026 – Aug 2026 &middot; 4 months &middot; Weissach, Stuttgart</p>
+                <div class="detail-box">
+                    <h4>Skills Leveraged</h4>
                     <ul>
                         <li>Python</li>
                         <li>Voxel51</li>
@@ -246,77 +40,92 @@
             </div>
         </div>
 
-        <div class="timeline-item">
-            <img src="images/sap_logo.jpg" alt="SAP Logo" class="company-logo">
-            <div>
-                <h3>Working Student for Data De-Identification</h3>
-                <p>SAP</p>
-                <span>Apr 2024 - Apr 2026</span>
-                <p>Duration: 2 years</p>
-                <div class="skills">
-                    <h4>Skills Leveraged:</h4>
+        <div class="timeline-item fade-in">
+            <img src="images/sap_logo.jpg" alt="SAP" class="timeline-logo">
+            <div class="tl-content">
+                <h3>Working Student — Data De-Identification</h3>
+                <p class="tl-org">SAP SE</p>
+                <p class="tl-date">Apr 2024 – Apr 2026 &middot; 2 years &middot; Walldorf</p>
+                <div class="detail-box">
+                    <h4>Skills Leveraged</h4>
                     <ul>
                         <li>Python</li>
-                        <li>Cloud Computing on MS Azure Databricks</li>
+                        <li>MS Azure Databricks</li>
                         <li>NumPy</li>
                         <li>Big Data Processing</li>
                         <li>Unit Testing</li>
-                        <li>Git/GitHub</li>
+                        <li>Git / GitHub</li>
                         <li>Agile</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div class="timeline-item">
-            <img src="images/aptiv_logo.png" alt="Aptiv Logo" class="company-logo">
-            <div>
-                <h3>Bachelor Thesis</h3>
-                <p>Aptiv</p>
-                <span>Jan 2024 - Apr 2024</span>
-                <p>Duration: 3 months<p>
+        <div class="timeline-item fade-in">
+            <img src="images/aptiv_logo.png" alt="Aptiv" class="timeline-logo">
+            <div class="tl-content">
+                <h3>Bachelor Thesis — Computer Vision</h3>
+                <p class="tl-org">Aptiv</p>
+                <p class="tl-date">Jan 2024 – Apr 2024 &middot; 3 months</p>
             </div>
         </div>
-        <div class="timeline-item">
-            <img src="images/aptiv_logo.png" alt="Aptiv Logo" class="company-logo">
-            <div>
-                <h3>Working Student for Computer Vision/AI/ML</h3>
-                <p>Aptiv</p>
-                <span>Nov 2022 - Jan 2024</span>
-                <p>Duration: 1 year 3 months<p>
-                    <div class="skills">
-                        <h4>Skills Leveraged:</h4>
-                        <ul>
-                            <li>Python</li>
-                            <li>C++</li>
-                            <li>PyTorch</li>
-                            <li>OpenCV</li>
-                            <li>NumPy</li>
-                            <li>Bazel Building Framework</li>
-                            <li>Git/Gerrit</li>
-                            <li>MISRA</li>
-                            <li>Unit Testing</li>
-                            <li>Agile</li>
-                        </ul>
-                    </div>
+
+        <div class="timeline-item fade-in">
+            <img src="images/aptiv_logo.png" alt="Aptiv" class="timeline-logo">
+            <div class="tl-content">
+                <h3>Working Student — Computer Vision / AI / ML</h3>
+                <p class="tl-org">Aptiv</p>
+                <p class="tl-date">Nov 2022 – Jan 2024 &middot; 1 year 3 months</p>
+                <div class="detail-box">
+                    <h4>Skills Leveraged</h4>
+                    <ul>
+                        <li>Python</li>
+                        <li>C++</li>
+                        <li>PyTorch</li>
+                        <li>OpenCV</li>
+                        <li>NumPy</li>
+                        <li>Bazel</li>
+                        <li>Git / Gerrit</li>
+                        <li>MISRA</li>
+                        <li>Unit Testing</li>
+                        <li>Agile</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="timeline-item">
-            <img src="images/uni_duisburg_essen_logo.jpg" alt="University Logo" class="company-logo">
-            <div>
-                <h3>Tutor for C Programming Language</h3>
-                <p>University of Duisburg-Essen</p>
-                <span>May 2022 - Aug 2022</span>
-                <p>Duration: 4 months<p>
-                    <div class="skills">
-                        <h4>Skills Leveraged:</h4>
-                        <ul>
-                            <li>C++</li>
-                            <li>Teaching</li>
-                        </ul>
-                    </div>
+
+        <div class="timeline-item fade-in">
+            <img src="images/uni_duisburg_essen_logo.jpg" alt="University of Duisburg-Essen" class="timeline-logo">
+            <div class="tl-content">
+                <h3>Tutor — C Programming Language</h3>
+                <p class="tl-org">University of Duisburg-Essen</p>
+                <p class="tl-date">May 2022 – Aug 2022 &middot; 4 months</p>
+                <div class="detail-box">
+                    <h4>Skills Leveraged</h4>
+                    <ul>
+                        <li>C</li>
+                        <li>Teaching</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/amirali-aali-09240312b" target="_blank">LinkedIn</a>
+            <a href="https://github.com/amiraliaali" target="_blank">GitHub</a>
+            <a href="mailto:amiraliaali@gmail.com">Email</a>
+        </div>
+        <span>Amir Ali Aali &middot; Aachen, Germany</span>
+    </footer>
+
+    <script>
+        const io = new IntersectionObserver(
+            es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+            { threshold: 0.08 }
+        );
+        document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+    </script>
 </body>
 </html>

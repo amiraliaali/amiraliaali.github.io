@@ -3,137 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Street Lamp Area Detection - Amir Ali Aali</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f7fc;
-            color: #333;
-        }
-        header {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('../images/projects/slad_thumbnail.png') no-repeat center/cover;
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #1c1c1c;
-            padding: 14px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav a {
-            color: white;
-            font-size: 16px;
-            text-decoration: none;
-            padding: 12px 18px;
-            margin: 0 10px;
-            transition: all 0.3s ease;
-            border-radius: 5px;
-        }
-        nav a:hover, nav a.active {
-            background: #0073b1;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 25px;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 0.6s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        h2 {
-            color: #222;
-            border-bottom: 2px solid #0073b1;
-            padding-bottom: 5px;
-            display: inline-block;
-        }
-        .container ul {
-            padding-left: 25px;
-        }
-        .video-container {
-            margin-top: 25px;
-            text-align: center;
-        }
-        .video-container iframe {
-            max-width: 100%;
-            border-radius: 10px;
-        }
-        .github-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 20px;
-            background: #0073b1;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: background 0.3s ease;
-        }
-        .github-link:hover {
-            background: #005582;
-        }
-    </style>
+    <title>Street Lamp Area Detection — Amir Ali Aali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header>
+    <header style="background: linear-gradient(rgba(15,23,42,0.72), rgba(15,23,42,0.72)), url('../images/projects/slad_thumbnail.png') no-repeat center/cover;">
         <h1>Street Lamp Area Detection</h1>
-        <p>Computer Vision Project</p>
+        <p class="subtitle">Computer Vision &middot; Bachelor's Thesis at Aptiv</p>
     </header>
+
     <nav>
         <a href="../index.html">Home</a>
         <a href="../education.html">Education</a>
         <a href="../experience.html">Work Experience</a>
-        <a href="../projects.html">Projects</a>
-        <a href="../certificates.html">Certificates & Awards</a>
-        <a href="../skills.html">Skills & Languages</a>
+        <a href="../projects.html" class="active">Projects</a>
+        <a href="../certificates.html">Certificates &amp; Awards</a>
+        <a href="../skills.html">Skills &amp; Languages</a>
     </nav>
-    <div class="container">
-        <h2>Overview</h2>
-        <p>
-            As part of my Bachelor’s thesis, titled <strong>Street Lamp Area Detection</strong> through Classical Vision and Convolutional Neural Networks, I developed a system that processes video footage to assess real-time lighting conditions.
-            <br><br>
-            The system determines whether there is sufficient lighting at any given moment, allowing for automatic activation of a car’s high beams in low-light conditions.
-        </p>
-        
-        <h2>Skills Leveraged</h2>
-        <ul>
-            <li>Python</li>
-            <li>Computer Vision (Classical & Deep Learning)</li>
-            <li>PyTorch for CNNs</li>
-            <li>OpenCV for image processing</li>
-            <li>NumPy, Pandas, Matplotlib</li>
-            <li>Git/GitHub</li>
-        </ul>
-        
-        <h2>Demonstration</h2>
-        <div class="video-container">
-            <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/904GHoCMZxM?rel=0" frameborder="0" allowfullscreen></iframe>
-            <p id="fallback-message" class="fallback-video">If video failed to load: <a href="https://www.youtube.com/watch?v=904GHoCMZxM" target="_blank">Watch on YouTube</a></p>
-        </div>
 
-        <h2>Github Repository</h2>
-        <p>Unfortunately, I am unable to share the code per Aptiv’s request.</p>
-        <!-- <a class="github-link" href="https://github.com/amiraliaali/streetlamp-detection" target="_blank">View on GitHub</a> -->
+    <div class="detail-container">
+        <div class="detail-card">
+            <h2>Overview</h2>
+            <p>
+                As part of my Bachelor's thesis titled <strong>Street Lamp Area Detection through Classical Vision and Convolutional Neural Networks</strong>, I developed a system that processes video footage to assess real-time lighting conditions.
+            </p>
+            <p>
+                The system determines whether there is sufficient lighting at any given moment, allowing for automatic activation of a car's high beams in low-light conditions.
+            </p>
+
+            <h2>Skills Leveraged</h2>
+            <ul>
+                <li>Python</li>
+                <li>Computer Vision (Classical &amp; Deep Learning)</li>
+                <li>PyTorch for CNNs</li>
+                <li>OpenCV for image processing</li>
+                <li>NumPy, Pandas, Matplotlib</li>
+                <li>Git/GitHub</li>
+            </ul>
+
+            <h2>Demonstration</h2>
+            <div class="video-wrap">
+                <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/904GHoCMZxM?rel=0" frameborder="0" allowfullscreen></iframe>
+                <p id="fallback-message" style="display:none;">If video failed to load: <a href="https://www.youtube.com/watch?v=904GHoCMZxM" target="_blank">Watch on YouTube</a></p>
+            </div>
+
+            <h2>GitHub Repository</h2>
+            <p style="color:var(--muted);">Unfortunately, the code cannot be shared per Aptiv's request.</p>
+        </div>
     </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/amirali-aali-09240312b" target="_blank">LinkedIn</a>
+            <a href="https://github.com/amiraliaali" target="_blank">GitHub</a>
+            <a href="mailto:amiraliaali@gmail.com">Email</a>
+        </div>
+        <span>Amir Ali Aali &middot; Aachen, Germany</span>
+    </footer>
 
     <script>
         window.onload = function() {
-            let video = document.getElementById("video");
-            video.onerror = function() {
+            let v = document.getElementById("video");
+            v.onerror = function() {
                 document.getElementById("fallback-message").style.display = "block";
-                video.style.display = "none";
+                v.style.display = "none";
             };
         };
     </script>
