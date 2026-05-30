@@ -33,7 +33,29 @@
     </nav>
 
     <div class="content-wrap">
-        <div class="card fade-in">
+
+        <!-- Stats strip -->
+        <div class="stats-strip reveal">
+            <div class="stat-item">
+                <div class="stat-number" data-count="4" data-suffix="+">4+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="9">9</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="3">3</div>
+                <div class="stat-label">Spoken Languages</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number" data-count="20" data-suffix="+">20+</div>
+                <div class="stat-label">Technical Skills</div>
+            </div>
+        </div>
+
+        <!-- About Me -->
+        <div class="card reveal">
             <h2 class="card-title">About Me</h2>
             <p>I hold a Bachelor's degree in Software Engineering from the University of Duisburg-Essen, graduating with a final grade of 1.7.</p>
             <p>Currently, I am in my fifth semester of a Master's program in Data Science at RWTH Aachen University, with an expected graduation in 2027.</p>
@@ -41,7 +63,8 @@
             <p style="margin-bottom:0;">I am eager to further develop my expertise in autonomous vehicles, with a particular focus on computer vision and reinforcement learning.</p>
         </div>
 
-        <div class="card fade-in" style="transition-delay:0.08s">
+        <!-- Contact -->
+        <div class="card reveal">
             <h2 class="card-title">Contact</h2>
             <div style="display:flex; flex-wrap:wrap; gap:20px 40px;">
                 <div>
@@ -63,8 +86,9 @@
             </div>
         </div>
 
+        <!-- Downloads -->
         <h3 style="font-size:1.05rem;font-weight:700;margin:8px 0 18px;color:var(--text);">Resume &amp; Brochure</h3>
-        <div class="two-col fade-in" style="transition-delay:0.16s">
+        <div class="two-col reveal">
             <div class="card" style="text-align:center;padding:22px;margin-bottom:0;">
                 <h3 style="font-size:0.93rem;font-weight:600;margin:0 0 14px;color:var(--text);">Curriculum Vitae</h3>
                 <img src="images/CV_English.png" alt="CV Preview" style="width:100%;border-radius:8px;border:1px solid var(--border);margin-bottom:16px;display:block;">
@@ -87,12 +111,6 @@
         <span>Amir Ali Aali &middot; Aachen, Germany</span>
     </footer>
 
-    <script>
-        const io = new IntersectionObserver(
-            es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-            { threshold: 0.08 }
-        );
-        document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
-    </script>
+    <script src="js/animations.js"></script>
 </body>
 </html>

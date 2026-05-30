@@ -24,7 +24,7 @@
     </nav>
 
     <div class="projects-wrap">
-        <div class="project-card fade-in">
+        <div class="project-card reveal scale-in">
             <img src="images/projects/slad_thumbnail.png" alt="Street Lamp Area Detection">
             <div class="project-body">
                 <h3>Street Lamp Area Detection</h3>
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="project-card fade-in">
+        <div class="project-card reveal scale-in">
             <img src="images/projects/face_anonymizer_thumbnail.png" alt="Face Anonymizer">
             <div class="project-body">
                 <h3>Face Anonymizer in Rust using YOLOv8</h3>
@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        <div class="project-card fade-in">
+        <div class="project-card reveal scale-in">
             <img src="images/projects/autonomous_navigation_1.jpg" alt="Autonomous Car Navigation using PPO">
             <div class="project-body">
                 <h3>Autonomous Car Navigation using PPO</h3>
@@ -64,7 +64,7 @@
             </div>
         </div>
 
-        <div class="project-card fade-in">
+        <div class="project-card reveal scale-in">
             <img src="images/projects/rocket_interceptor.png" alt="Rocket Interceptor">
             <div class="project-body">
                 <h3>Rocket Interceptor using Deep Q-Network</h3>
@@ -77,7 +77,7 @@
             </div>
         </div>
 
-        <div class="project-card fade-in">
+        <div class="project-card reveal scale-in">
             <img src="images/projects/traffic_signal_control.PNG" alt="Traffic Signal Control">
             <div class="project-body">
                 <h3>Traffic Signal Control using Deep SARSA</h3>
@@ -90,7 +90,7 @@
             </div>
         </div>
 
-        <div class="project-card fade-in">
+        <div class="project-card reveal scale-in">
             <img src="images/projects/tree.png" alt="Decision Tree with Rust">
             <div class="project-body">
                 <h3>Decision Tree with Rust</h3>
@@ -102,7 +102,7 @@
             </div>
         </div>
 
-        <div class="project-card fade-in">
+        <div class="project-card reveal scale-in">
             <img src="images/projects/mog.PNG" alt="Image Segmentation using MoG">
             <div class="project-body">
                 <h3>Image Segmentation using Mixture of Gaussians</h3>
@@ -115,7 +115,7 @@
             </div>
         </div>
 
-        <div class="project-card fade-in">
+        <div class="project-card reveal scale-in">
             <img src="images/projects/login_system.png" alt="Car Rental System">
             <div class="project-body">
                 <h3>Car Rental System</h3>
@@ -127,7 +127,7 @@
             </div>
         </div>
 
-        <div class="project-card fade-in">
+        <div class="project-card reveal scale-in">
             <img src="images/projects/language_detector.png" alt="Language Detector">
             <div class="project-body">
                 <h3>Language Detector</h3>
@@ -150,12 +150,6 @@
         <span>Amir Ali Aali &middot; Aachen, Germany</span>
     </footer>
 
-    <script>
-        const io = new IntersectionObserver(
-            es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-            { threshold: 0.06 }
-        );
-        document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
-    </script>
+    <script src="js/animations.js"></script>
 </body>
 </html>

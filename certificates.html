@@ -24,22 +24,22 @@
     </nav>
 
     <div class="certs-wrap">
-        <div class="cert-card fade-in">
+        <div class="cert-card reveal scale-in">
             <h3>Bachelor's Degree</h3>
             <img src="images/certificates/bachelors.jpg" alt="Bachelor's Degree">
         </div>
 
-        <div class="cert-card fade-in">
+        <div class="cert-card reveal scale-in">
             <h3>Germany's National Scholarship (Deutschlandstipendium)</h3>
             <img src="images/certificates/scholarship.jpg" alt="Deutschlandstipendium">
         </div>
 
-        <div class="cert-card fade-in">
+        <div class="cert-card reveal scale-in">
             <h3>German C1.1 Language Certificate</h3>
             <img src="images/certificates/german_certificate.jpg" alt="German Certificate">
         </div>
 
-        <div class="cert-card fade-in">
+        <div class="cert-card reveal scale-in">
             <h3>Reinforcement Learning: Beginner to Master — AI in Python</h3>
             <img src="images/certificates/udemy_1.jpg" alt="Reinforcement Learning Certificate">
             <div class="cert-link">
@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        <div class="cert-card fade-in">
+        <div class="cert-card reveal scale-in">
             <h3>Python for Data Science and Machine Learning Bootcamp</h3>
             <img src="images/certificates/udemy_2.jpg" alt="Data Science Certificate">
             <div class="cert-link">
@@ -55,7 +55,7 @@
             </div>
         </div>
 
-        <div class="cert-card fade-in">
+        <div class="cert-card reveal scale-in">
             <h3>Beginning C++ Programming: From Beginner to Beyond</h3>
             <img src="images/certificates/udemy_3.jpg" alt="C++ Certificate">
             <div class="cert-link">
@@ -63,7 +63,7 @@
             </div>
         </div>
 
-        <div class="cert-card fade-in">
+        <div class="cert-card reveal scale-in">
             <h3>3rd Place — National Aerospace Student Competition (Glider League)</h3>
             <img src="images/certificates/3rd_amirkabir.jpg" alt="3rd Place Award">
         </div>
@@ -78,12 +78,6 @@
         <span>Amir Ali Aali &middot; Aachen, Germany</span>
     </footer>
 
-    <script>
-        const io = new IntersectionObserver(
-            es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-            { threshold: 0.06 }
-        );
-        document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
-    </script>
+    <script src="js/animations.js"></script>
 </body>
 </html>

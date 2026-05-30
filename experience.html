@@ -24,7 +24,7 @@
     </nav>
 
     <div class="timeline-wrap">
-        <div class="timeline-item fade-in">
+        <div class="timeline-item reveal from-left">
             <img src="images/porsche_logo.png" alt="Porsche" class="timeline-logo">
             <div class="tl-content">
                 <h3>Intern — Vision-Based Driving Assistance Systems</h3>
@@ -40,7 +40,7 @@
             </div>
         </div>
 
-        <div class="timeline-item fade-in">
+        <div class="timeline-item reveal from-left">
             <img src="images/sap_logo.jpg" alt="SAP" class="timeline-logo">
             <div class="tl-content">
                 <h3>Working Student — Data De-Identification</h3>
@@ -61,7 +61,7 @@
             </div>
         </div>
 
-        <div class="timeline-item fade-in">
+        <div class="timeline-item reveal from-left">
             <img src="images/aptiv_logo.png" alt="Aptiv" class="timeline-logo">
             <div class="tl-content">
                 <h3>Bachelor Thesis — Computer Vision</h3>
@@ -70,7 +70,7 @@
             </div>
         </div>
 
-        <div class="timeline-item fade-in">
+        <div class="timeline-item reveal from-left">
             <img src="images/aptiv_logo.png" alt="Aptiv" class="timeline-logo">
             <div class="tl-content">
                 <h3>Working Student — Computer Vision / AI / ML</h3>
@@ -94,7 +94,7 @@
             </div>
         </div>
 
-        <div class="timeline-item fade-in">
+        <div class="timeline-item reveal from-left">
             <img src="images/uni_duisburg_essen_logo.jpg" alt="University of Duisburg-Essen" class="timeline-logo">
             <div class="tl-content">
                 <h3>Tutor — C Programming Language</h3>
@@ -120,12 +120,6 @@
         <span>Amir Ali Aali &middot; Aachen, Germany</span>
     </footer>
 
-    <script>
-        const io = new IntersectionObserver(
-            es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-            { threshold: 0.08 }
-        );
-        document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
-    </script>
+    <script src="js/animations.js"></script>
 </body>
 </html>

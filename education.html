@@ -24,7 +24,7 @@
     </nav>
 
     <div class="timeline-wrap">
-        <div class="timeline-item fade-in">
+        <div class="timeline-item reveal from-left">
             <img src="images/rwth_logo.png" alt="RWTH Aachen" class="timeline-logo">
             <div class="tl-content">
                 <h3>Master of Science in Data Science</h3>
@@ -51,7 +51,7 @@
             </div>
         </div>
 
-        <div class="timeline-item fade-in">
+        <div class="timeline-item reveal from-left">
             <img src="images/uni_duisburg_essen_logo.jpg" alt="University of Duisburg-Essen" class="timeline-logo">
             <div class="tl-content">
                 <h3>Bachelor of Science in Software Engineering</h3>
@@ -73,7 +73,7 @@
             </div>
         </div>
 
-        <div class="timeline-item fade-in">
+        <div class="timeline-item reveal from-left">
             <img src="images/fh_aachen_logo.png" alt="FH Aachen" class="timeline-logo">
             <div class="tl-content">
                 <h3>Preparatory College (Studienkolleg)</h3>
@@ -101,12 +101,6 @@
         <span>Amir Ali Aali &middot; Aachen, Germany</span>
     </footer>
 
-    <script>
-        const io = new IntersectionObserver(
-            es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-            { threshold: 0.08 }
-        );
-        document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
-    </script>
+    <script src="js/animations.js"></script>
 </body>
 </html>
